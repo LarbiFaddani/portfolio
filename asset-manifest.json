@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LarbiFaddani/portfolio/static/css/main.97db55e5.css",
+    "main.js": "/LarbiFaddani/portfolio/static/js/main.10618c24.js",
+    "index.html": "/LarbiFaddani/portfolio/index.html",
+    "main.97db55e5.css.map": "/LarbiFaddani/portfolio/static/css/main.97db55e5.css.map",
+    "main.10618c24.js.map": "/LarbiFaddani/portfolio/static/js/main.10618c24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97db55e5.css",
+    "static/js/main.10618c24.js"
+  ]
+}
