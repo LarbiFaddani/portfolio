@@ -1,0 +1,9 @@
+.custom-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    color: #00acc1;
+  }
+  
