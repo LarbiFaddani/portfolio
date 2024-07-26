@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions, Container, Grid, Paper, styled } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import './Projet.css'
 
 
 const projects = [
@@ -36,7 +36,7 @@ export default function Projet({themeLight}) {
     border: 'none', // Supprimer les bordures
   }));
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div className='responsive-height'>
       <Container>
         <Box my={4}>
           <Typography variant="h4">

@@ -48,7 +48,10 @@ export default function BasicGrid({ themeLight }) {
         flexGrow: 1,
         backgroundColor: themeLight ? 'black' : 'white',
         color: themeLight ? 'white' : 'black',
-        minHeight: '100vh',
+        minHeight: '110vh',
+        '@media (min-width:600px)': {
+          minHeight: '100vh',
+        },
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

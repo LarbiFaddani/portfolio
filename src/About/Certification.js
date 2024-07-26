@@ -74,7 +74,7 @@ function Certification({themeLight}) {
       </div>}
       
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>} Cliquer sur le titre du Certificat pour la vérification
+        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>} Cliquer sur le titre du Certificat pour la vérification{' '}
         {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>}
       </div>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
