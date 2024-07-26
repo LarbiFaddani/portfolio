@@ -9,7 +9,6 @@ import { useTheme } from '@mui/material/styles';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-// import EmailIcon from '@mui/icons-material/Email';
 import DownloadIcon from '@mui/icons-material/Download';
 import CallIcon from '@mui/icons-material/Call';
 
@@ -34,7 +33,7 @@ const downloadCV = () => {
   document.body.removeChild(link);
 };
 
-export default function BasicGrid() {
+export default function BasicGrid({ themeLight }) {
   const [afficherButton, setAfficherBoutton] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -47,13 +46,15 @@ export default function BasicGrid() {
     <Box
       sx={{
         flexGrow: 1,
-        backgroundColor: 'black',
-        color: 'white',
+        backgroundColor: themeLight ? 'black' : 'white',
+        color: themeLight ? 'white' : 'black',
         minHeight: '100vh',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      
+
       <Grid container spacing={2} direction={isMobile ? 'column' : 'row'}>
         <Grid item xs={12} sm={6} style={{ marginTop: isMobile ? '0' : '40px' }}>
           <Item
@@ -61,27 +62,27 @@ export default function BasicGrid() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'black',
-              color: 'white',
+              backgroundColor: themeLight ? 'black' : 'white',
+              color: themeLight ? 'white' : 'black',
               padding: '100px 0px 0px 20px',
               borderRadius: '50px',
               '@media (min-width:600px)': {
-                padding: '300px 0px 0px 20px', // padding for larger screens
+                padding: '300px 0px 0px 20px',
               },
             }}
           >
             <div style={{ paddingTop: '0px' }}>
               <h1>
-                Je suis <span style={{ color: '#00acc1', fontSize: 'larger' }}>Faddani Larbi</span>
+                Je suis <span style={{ color: themeLight ? '#00acc1' : '#00acc1', fontSize: 'larger' }}>Faddani Larbi</span>
               </h1>
               <h3>
-                Développeur web <span style={{ color: '#00796b', fontSize: 'larger' }}>Full Stack</span>
+                Développeur web <span style={{ color: themeLight ? '#00796b' : '#00796b', fontSize: 'larger' }}>Full Stack</span>
               </h3>
               <div style={{ marginTop: '25px' }}>
-                <Button variant="outlined" style={{ color: '#00acc1', marginRight: '20px', width: "200px", marginTop: '10px' }} onClick={handleAfficher}>
+                <Button style={{ borderColor: '#00acc1', color: themeLight ? '#00acc1' : '#00acc1', marginRight: '20px', width: '200px', marginTop: '10px' }} onClick={handleAfficher}>
                   <CallIcon />Contacter moi
                 </Button>
-                <Button variant="contained" style={{ color: 'white', backgroundColor: '#00acc1', width: "200px", marginTop: '10px' }} onClick={downloadCV}>
+                <Button variant="contained" style={{ color: 'white', backgroundColor: themeLight ? '#00acc1' : '#00acc1', width: '200px', marginTop: '10px' }} onClick={downloadCV}>
                   <DownloadIcon />Telecharger cv
                 </Button>
               </div>
@@ -96,9 +97,6 @@ export default function BasicGrid() {
                   <Button style={{ color: 'red' }} onClick={() => window.open('https://www.instagram.com/_arabi_fd', '_blank')}>
                     <InstagramIcon />
                   </Button>
-                  {/* <Button style={{ color: 'white' }}>
-                    <EmailIcon />
-                  </Button> */}
                 </div>
               )}
             </div>
@@ -115,15 +113,15 @@ export default function BasicGrid() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'black',
+              backgroundColor: themeLight ? 'black' : 'white',
               backgroundImage: `url(${process.env.PUBLIC_URL}/images/profile/et.avif)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               overflow: 'hidden',
-              boxShadow: '0 4px 80px #fff',
+              boxShadow: themeLight ? '0 4px 80px #fff' : '0 4px 80px #FDB813',
             }}
           >
-            <Box component="img" src={`${process.env.PUBLIC_URL}/images/profile/p1.png`} sx={{ width: '120%', height: '120%', objectFit: 'cover', paddingTop: '8px' }} />
+            <Box component="img" src={themeLight ? `${process.env.PUBLIC_URL}/images/profile/p1.png` : `${process.env.PUBLIC_URL}/images/profile/pOrange.jpg`} sx={{ width: '120%', height: '120%', objectFit: 'cover', paddingTop: '8px' }} />
           </Item>
         </Grid>
       </Grid>

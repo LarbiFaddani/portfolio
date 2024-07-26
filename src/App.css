@@ -1,4 +1,8 @@
-.full-screen{
+.light-screen{
   background-color: black;
   color: white
+}
+.dark-screen{
+  background-color: white;
+  color: black
 }

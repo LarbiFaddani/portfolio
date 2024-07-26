@@ -1,9 +1,9 @@
 import { Box, Container, Typography, TextField, Button } from '@mui/material';
 import React from 'react';
 
-function Contact() {
+function Contact({themeLight}) {
   return (
-    <Container style={{ minHeight: '100vh', backgroundColor: 'black', color: 'white', paddingTop: '50px' }}>
+    <Container style={{ minHeight: '100vh', backgroundColor: themeLight?'black':'white', color: 'white', paddingTop: '50px', marginTop: '8px' }}>
       <Box my={4} textAlign="center">
         <Typography variant="h4">
           <span style={{ color: "#00acc1" }}>Contact</span>
@@ -23,26 +23,26 @@ function Contact() {
         <TextField 
           label="Nom" 
           variant="outlined" 
-          InputLabelProps={{ style: { color: 'white' } }} 
-          InputProps={{ style: { color: 'white', borderColor: 'white' } }} 
-          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
+          InputLabelProps={{ style: { color: themeLight?'white':'black' } }} 
+          InputProps={{ style: { color: themeLight?'white':'black', borderColor: themeLight?'white':'black' } }} 
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: themeLight?'white':'black' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
         />
         <TextField 
           label="Email" 
           type="email" 
           variant="outlined" 
-          InputLabelProps={{ style: { color: 'white' } }} 
-          InputProps={{ style: { color: 'white', borderColor: 'white' } }} 
-          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
+          InputLabelProps={{ style: { color: themeLight?'white':'black' } }} 
+          InputProps={{ style: { color: themeLight?'white':'black', borderColor: themeLight?'white':'black' } }} 
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: themeLight?'white':'black' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
         />
         <TextField 
           label="Message" 
           variant="outlined" 
           multiline 
           rows={4} 
-          InputLabelProps={{ style: { color: 'white' } }} 
-          InputProps={{ style: { color: 'white', borderColor: 'white' } }} 
-          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
+          InputLabelProps={{ style: { color: themeLight?'white':'black' } }} 
+          InputProps={{ style: { color: themeLight?'white':'black', borderColor: themeLight?'white':'black' } }} 
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: themeLight?'white':'black' }, '&:hover fieldset': { borderColor: '#00acc1' }, '&.Mui-focused fieldset': { borderColor: '#00acc1' } } }}
         />
         <Button variant="contained" style={{ marginTop: '20px', backgroundColor: '#00acc1', color: 'black' }}>
           Envoyer

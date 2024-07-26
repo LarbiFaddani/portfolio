@@ -12,7 +12,7 @@ const skills = [
   { name: 'Linux', icon: 'linux.png' },
 ];
 
-function Competence() {
+function Competence({themeLight}) {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   const handleMouseEnter = (index) => {
@@ -25,9 +25,11 @@ function Competence() {
 
   return (
     <div>
-      <div style={{ color: "#00acc1", textAlign: 'center', marginBottom: '20px', fontSize: '20px' }}>
+      {themeLight?<div style={{ color: "#00acc1", textAlign: 'center', marginBottom: '20px', fontSize: '20px' }}>
         Mes Compétences
-      </div>
+      </div>:<div style={{ color: "#00acc1", textAlign: 'center', marginBottom: '20px', fontSize: '20px' }}>
+        Mes Compétences
+      </div>}
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {skills.map((skill, index) => (
           <Grid item key={index} xs={6} sm={3}>
@@ -41,7 +43,9 @@ function Competence() {
                 alignItems: 'center',
                 borderRadius: '20px',
                 margin: '0px 20px 0px 20px',
-                backgroundColor: hoveredIndex === index ? '#00acc1' : '#212121', // Change la couleur de fond au survol
+                backgroundColor: themeLight?( hoveredIndex === index ? '#00acc1' : '#212121'):
+                ( hoveredIndex === index ? '#00acc1' : '#eeeeee'), // Change la couleur de fond au survol
+
                 padding: '30px 0px 30px 0px',
                 marginRight: '50px',
                 marginBottom: index === skills.length - 1 ? '20px' : '0px',

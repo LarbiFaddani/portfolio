@@ -6,13 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions, Container, Grid, Paper, styled } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: 'black',
-  padding: theme.spacing(2),
-  color: 'white',
-  boxShadow: 'none', // Supprimer l'ombre
-  border: 'none', // Supprimer les bordures
-}));
+
 
 const projects = [
   {
@@ -33,7 +27,14 @@ const projects = [
   },
 ];
 
-export default function MultiActionAreaCard() {
+export default function Projet({themeLight}) {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: themeLight?'black':'white',
+    padding: theme.spacing(2),
+    color: themeLight?'black':'white',
+    boxShadow: 'none', // Supprimer l'ombre
+    border: 'none', // Supprimer les bordures
+  }));
   return (
     <div style={{ minHeight: '100vh' }}>
       <Container>
@@ -50,8 +51,8 @@ export default function MultiActionAreaCard() {
                   sx={{
                     maxWidth: 345,
                     height: '100%',
-                    backgroundColor: '#212121',
-                    color: 'white',
+                    backgroundColor: themeLight?'#212121':'#eeeeee',
+                    color: themeLight?'white':'black',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
@@ -72,7 +73,7 @@ export default function MultiActionAreaCard() {
                       <Typography gutterBottom variant="h6" component="div">
                         {project.title}
                       </Typography>
-                      <Typography variant="body2" color="white">
+                      <Typography variant="body2" color={themeLight?"white":"black"}>
                         {project.description}
                         <div>
                           {project.technologies.map((tech, idx) => (
@@ -84,10 +85,10 @@ export default function MultiActionAreaCard() {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions sx={{ backgroundColor: '#424242' }}>
+                  <CardActions sx={{ backgroundColor: themeLight?'#424242':'#bdbdbd' }}>
                     <Button
                       size="small"
-                      style={{ color: 'white' }}
+                      style={{ color: themeLight?'white':'black' }}
                       target="_blank"
                       href={project.githubLink}
                     >

@@ -1,13 +1,7 @@
 import React from 'react';
 import { Box, Container, Grid, Paper, styled } from '@mui/material';
 import './About.css'
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#212121',
-  padding: theme.spacing(2),
-  color: 'white',
-  boxShadow: 'none', // Supprimer l'ombre
-  border: 'none', // Supprimer les bordures
-}));
+
 
 const certifications = [
   {
@@ -63,21 +57,31 @@ const certifications = [
   },
 ];
 
-function Certification() {
+function Certification({themeLight}) {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: themeLight?'#212121':'#eeeeee',
+    padding: theme.spacing(2),
+    color: 'white',
+    boxShadow: 'none', // Supprimer l'ombre
+    border: 'none', // Supprimer les bordures
+  }));
   return (
     <Container style={{ minHeight: '100vh' }}>
-      <div style={{ margin: '20px 0px 10px 0px', color: "#00acc1", textAlign: 'center', fontSize: '20px' }}>
+      {themeLight?<div style={{ margin: '20px 0px 10px 0px', color: "#00acc1", textAlign: 'center', fontSize: '20px' }}>
         Mes Certifications
-      </div>
+      </div>:<div style={{ margin: '20px 0px 10px 0px', color: "#00acc1", textAlign: 'center', fontSize: '20px' }}>
+        Mes Certifications
+      </div>}
+      
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        <span style={{ color: '#00acc1' }}>"</span> Cliquer sur le titre du Certificat pour la vérification{' '}
-        <span style={{ color: '#00acc1' }}>"</span>
+        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>} Cliquer sur le titre du Certificat pour la vérification
+        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>}
       </div>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {certifications.map((certification, index) => (
           <React.Fragment key={index}>
             <Grid item xs={4}>
-              <Item style={{ display: 'flex', justifyContent: 'center', minHeight: '140px', alignItems: 'center', backgroundColor: 'black' }}>
+              <Item style={{ display: 'flex', justifyContent: 'center', minHeight: '140px', alignItems: 'center', backgroundColor: themeLight?'black':'white' }}>
                 <Box
                   component="img"
                   src={`${process.env.PUBLIC_URL}/images/universites/${certification.image}`}
@@ -93,15 +97,22 @@ function Certification() {
             <Grid item xs={8}>
               <Item style={{ minHeight: '140px' }}>
                 {certification.titles.map((item, index) => (
-                  <div key={index} style={{ marginTop: '8px' }}>
-                    <a
+                  <div key={index} style={{ marginTop: '8px', }}>
+                    {themeLight?<a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="custom-link"
                     >
                       {item.title}
-                    </a>
+                    </a>:<a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="custom-link-dark"
+                    >
+                      {item.title}
+                    </a>}
                   </div>
                 ))}
               </Item>
