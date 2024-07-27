@@ -12,9 +12,9 @@ const skills = [
   { name: 'Linux', icon: 'linux.png' },
 ];
 
-function Competence({themeLight}) {
+function Competence({themeLight, isFrench}) {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-
+  const competence = isFrench?"Mes Compétences":"Our Skills";
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
   };
@@ -26,9 +26,9 @@ function Competence({themeLight}) {
   return (
     <div>
       {themeLight?<div style={{ color: "#00acc1", textAlign: 'center', marginBottom: '20px', fontSize: '20px' }}>
-        Mes Compétences
+        {competence}
       </div>:<div style={{ color: "#00acc1", textAlign: 'center', marginBottom: '20px', fontSize: '20px' }}>
-        Mes Compétences
+        {competence}
       </div>}
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {skills.map((skill, index) => (

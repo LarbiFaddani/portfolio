@@ -7,27 +7,29 @@ import { Box, Button, CardActionArea, CardActions, Container, Grid, Paper, style
 import GitHubIcon from '@mui/icons-material/GitHub';
 import './Projet.css'
 
-
-const projects = [
-  {
-    image: 'prjt1.png',
-    title: 'Application web de réservation des Terrains',
-    description:
-      "Mettre en place une plateforme web où les utilisateurs peuvent rechercher, visualiser et réserver des terrains de football disponibles en fonction de leur emplacement.",
-    technologies: ['Django', 'Html & css', 'mySql'],
-    githubLink: 'https://github.com/LarbiFaddani/gestion_terrains',
-  },
-  {
-    image: 'prjt2.png',
-    title: 'Application web de gestion d’annonces publicitaires',
-    description:
-      "Le système sera composé d'un logiciel de gestion centralisé qui permettra aux commerçants de gérer leurs annonces à distance, et d'un réseau d'écrans installés sur les façades des commerces participants.",
-    technologies: ['React', 'Ant Design', 'mySql'],
-    githubLink: 'https://github.com/LarbiFaddani/proxy',
-  },
-];
-
-export default function Projet({themeLight}) {
+export default function Projet({themeLight, isFrench}) {
+  const title = isFrench?"Mes Projets":"Our Projects";
+  const projects = [
+    {
+      image: 'prjt1.png',
+      title: isFrench?'Application web de réservation des Terrains':'Land reservation web application',
+      description:isFrench?
+        "Mettre en place une plateforme web où les utilisateurs peuvent rechercher, visualiser et réserver des terrains de football disponibles en fonction de leur emplacement."
+        :"Set up a web platform where users can search, view and reserve available football pitches based on their location.",
+      technologies: ['Django', 'Html & css', 'mySql'],
+      githubLink: 'https://github.com/LarbiFaddani/gestion_terrains',
+    },
+    {
+      image: 'prjt2.png',
+      title: isFrench?'Application web de gestion d’annonces publicitaires':'Ad management web application',
+      description:
+      isFrench?
+        "Le système sera composé d'un logiciel de gestion centralisé qui permettra aux commerçants de gérer leurs annonces à distance, et d'un réseau d'écrans installés sur les façades des commerces participants.":
+        "The system will consist of centralized management software which will allow merchants to manage their advertisements remotely, and a network of screens installed on the facades of participating businesses.",
+      technologies: ['React', 'Ant Design', 'mySql'],
+      githubLink: 'https://github.com/LarbiFaddani/proxy',
+    },
+  ];
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: themeLight?'black':'white',
     padding: theme.spacing(2),
@@ -40,7 +42,7 @@ export default function Projet({themeLight}) {
       <Container>
         <Box my={4}>
           <Typography variant="h4">
-            <span style={{ color: "#00acc1" }}>Mes Projets</span>
+            <span style={{ color: "#00acc1" }}>{title}</span>
           </Typography>
         </Box>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

@@ -11,6 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import DownloadIcon from '@mui/icons-material/Download';
 import CallIcon from '@mui/icons-material/Call';
+import './Acceuil.css';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -33,11 +34,14 @@ const downloadCV = () => {
   document.body.removeChild(link);
 };
 
-export default function BasicGrid({ themeLight }) {
+export default function BasicGrid({ themeLight, isFrench }) {
   const [afficherButton, setAfficherBoutton] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const moi = isFrench?"Je suis":"I'm";
+  const dev = isFrench?"Développeur web":"Web developer"
+  const contact = isFrench?"Contacter moi":"Contact me"
+  const cv = isFrench?"Télécharger cv":"Download Resume"
   const handleAfficher = () => {
     setAfficherBoutton(!afficherButton);
   };
@@ -76,17 +80,17 @@ export default function BasicGrid({ themeLight }) {
           >
             <div style={{ paddingTop: '0px' }}>
               <h1>
-                Je suis <span style={{ color: themeLight ? '#00acc1' : '#00acc1', fontSize: 'larger' }}>Faddani Larbi</span>
+                {moi} <span style={{ color: themeLight ? '#00acc1' : '#00acc1', fontSize: 'larger' }}>Faddani Larbi</span>
               </h1>
               <h3>
-                Développeur web <span style={{ color: themeLight ? '#00796b' : '#00796b', fontSize: 'larger' }}>Full Stack</span>
-              </h3>
+      {dev} <span className="animated-text" style={{ fontSize: 'larger' }}>Full Stack</span>
+    </h3>
               <div style={{ marginTop: '25px' }}>
                 <Button style={{ borderColor: '#00acc1', color: themeLight ? '#00acc1' : '#00acc1', marginRight: '20px', width: '200px', marginTop: '10px' }} onClick={handleAfficher}>
-                  <CallIcon />Contacter moi
+                  <CallIcon />{contact}
                 </Button>
                 <Button variant="contained" style={{ color: 'white', backgroundColor: themeLight ? '#00acc1' : '#00acc1', width: '200px', marginTop: '10px' }} onClick={downloadCV}>
-                  <DownloadIcon />Telecharger cv
+                  <DownloadIcon />{cv}
                 </Button>
               </div>
               {afficherButton && (

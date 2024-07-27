@@ -1,0 +1,16 @@
+/* styles.css */
+@keyframes colorChange {
+  0% {
+    color: #00796b;
+  }
+  50% {
+    color: #00acc1;
+  }
+  100% {
+    color: #00796b;
+  }
+}
+
+.animated-text {
+  animation: colorChange 2s infinite;
+}

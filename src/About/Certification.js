@@ -57,7 +57,7 @@ const certifications = [
   },
 ];
 
-function Certification({themeLight}) {
+function Certification({themeLight, isFrench}) {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: themeLight?'#212121':'#eeeeee',
     padding: theme.spacing(2),
@@ -65,16 +65,19 @@ function Certification({themeLight}) {
     boxShadow: 'none', // Supprimer l'ombre
     border: 'none', // Supprimer les bordures
   }));
+  const certification = isFrench?"Mes certifications":"Our certifactions"
+  const advice = isFrench?" Cliquer sur le titre du Certificat pour la vérification ":" Click on the title of the Certificate for verification ";
   return (
     <Container style={{ minHeight: '100vh' }}>
       {themeLight?<div style={{ margin: '20px 0px 10px 0px', color: "#00acc1", textAlign: 'center', fontSize: '20px' }}>
-        Mes Certifications
+        {certification}
       </div>:<div style={{ margin: '20px 0px 10px 0px', color: "#00acc1", textAlign: 'center', fontSize: '20px' }}>
-        Mes Certifications
+        {certification}
       </div>}
       
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>} Cliquer sur le titre du Certificat pour la vérification{' '}
+        {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>}
+          {advice}
         {themeLight?<span style={{ color: '#00acc1' }}>"</span>:<span style={{ color: '#00acc1' }}>"</span>}
       </div>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
