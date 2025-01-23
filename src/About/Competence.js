@@ -62,6 +62,7 @@ function Competence({themeLight, isFrench}) {
                   paddingTop: '8px',
                 }}
               />
+              
               <Box component="span" sx={{ marginTop: '8px' }}>
                 {skill.name}
               </Box>
