@@ -128,7 +128,16 @@ export default function BasicGrid({ themeLight, isFrench }) {
               boxShadow: themeLight ? '0 4px 80px #fff' : '0 4px 80px #FDB813',
             }}
           >
-            <Box component="img" src={themeLight ? `${process.env.PUBLIC_URL}/images/profile/p1.png` : `${process.env.PUBLIC_URL}/images/profile/pOrange.jpg`} sx={{ width: '120%', height: '120%', objectFit: 'cover', paddingTop: '8px' }} />
+<Box
+  component="img"
+  src={themeLight ? `/images/profile/p1.png` : `/images/profile/pOrange.jpg`}
+  sx={{
+    width: '120%',
+    height: '120%',
+    objectFit: 'cover',
+    paddingTop: '8px',
+  }}
+/>
           </Item>
         </Grid>
       </Grid>
