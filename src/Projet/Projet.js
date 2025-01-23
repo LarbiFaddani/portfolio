@@ -68,7 +68,7 @@ export default function Projet({themeLight, isFrench}) {
                     <CardMedia
                       component="img"
                       height="140"
-                      image={`${process.env.PUBLIC_URL}/static/images/project/${project.image}`}
+                      image={`/static/Images/project/${project.image}`}
                       alt="project"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>

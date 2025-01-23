@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const downloadCV = () => {
-  const cvFilePath = `${process.env.PUBLIC_URL}/static/images/profile/FADDANI.pdf`;
+  const cvFilePath = `/static/Images/profile/FADDANI.pdf`;
 
   const link = document.createElement('a');
   link.href = cvFilePath;
@@ -121,7 +121,7 @@ export default function BasicGrid({ themeLight, isFrench }) {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: themeLight ? 'black' : 'white',
-              backgroundImage: `url(${process.env.PUBLIC_URL}/static/images/profile/et.avif)`,
+              backgroundImage: `/static/Images/profile/et.avif)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               overflow: 'hidden',
@@ -130,7 +130,7 @@ export default function BasicGrid({ themeLight, isFrench }) {
           >
 <Box
   component="img"
-  src={themeLight ? `/static/images/profile/p1.png` : `/static/images/profile/pOrange.jpg`}
+  src={themeLight ? `/static/Images/profile/p1.png` : `/static/Images/profile/pOrange.jpg`}
   sx={{
     width: '120%',
     height: '120%',
