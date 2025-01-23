@@ -87,7 +87,7 @@ function Certification({themeLight, isFrench}) {
               <Item style={{ display: 'flex', justifyContent: 'center', minHeight: '140px', alignItems: 'center', backgroundColor: themeLight?'black':'white' }}>
                 <Box
                   component="img"
-                  src={`/static/Images/universites/${certification.image}`}
+                  src={`/static/Images/Universites/${certification.image}`}
                   sx={{
                     width: '30%',
                     height: '30%',
