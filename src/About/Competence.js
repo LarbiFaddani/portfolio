@@ -53,8 +53,8 @@ function Competence({themeLight, isFrench}) {
             >
               <Box
                 component="img"
-                // src={`${process.env.PUBLIC_URL}/static/images/skills/${skill.icon}`}
-                src={`/static/images/skills/${skill.icon}`}
+                // src={`${process.env.PUBLIC_URL}/static/Images/skills/${skill.icon}`}
+                src={`/static/Images/skills/${skill.icon}`}
                 sx={{
                   width: '50px',
                   height: '50px',
@@ -62,7 +62,7 @@ function Competence({themeLight, isFrench}) {
                   paddingTop: '8px',
                 }}
               />
-              
+
               <Box component="span" sx={{ marginTop: '8px' }}>
                 {skill.name}
               </Box>
