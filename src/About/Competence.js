@@ -53,7 +53,7 @@ function Competence({themeLight, isFrench}) {
             >
               <Box
                 component="img"
-                src={`${process.env.PUBLIC_URL}/images/skills/${skill.icon}`}
+                src={`${process.env.PUBLIC_URL}/images/skills/python.png`}
                 sx={{
                   width: '50px',
                   height: '50px',
